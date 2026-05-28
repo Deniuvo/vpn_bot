@@ -1,0 +1,8 @@
+python-telegram-bot==20.7
+cryptography==41.0.7
+flask==3.0.0
+requests==2.31.0
+yoomoney==0.1.2
+qrcode[pil]==7.4.2
+py3xui>=1.0.0
+

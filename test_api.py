@@ -1,0 +1,11 @@
+import os
+os.environ.setdefault('YMONEY_ACCESS_TOKEN', '4100119393589473.11DC629C09F69B09F74DBC8158E2D2E9C979ED51FD180C4C6C3B1EF87C9D7A283D483CCE4D8F8977AB7316B41980C71EFC7D4468F54868E14BBE69453E0E4C18DB131CD62D1DE6905EE6B27D0F294D91403FD6044CF99EEBBC34D489E55FA9495E5887A6D8D72060F44D4A1CF225D96EB5A5CDA9D1A498A6EEDEBCA000FEA157')
+
+import requests
+resp = requests.post(
+    'https://yoomoney.ru/api/account-info',
+    headers={'Authorization': f'Bearer {os.environ["YMONEY_ACCESS_TOKEN"]}', 'Content-Type': 'application/x-www-form-urlencoded'},
+    timeout=15
+)
+print(f'STATUS: {resp.status_code}')
+print(f'BODY: {resp.text[:300]}')
